@@ -1,0 +1,40 @@
+{
+  "name": "@coldsurf/parley",
+  "version": "0.1.0",
+  "description": "Git-style env sync between your machine and AWS Parameter Store + KMS. A self-hosted alternative to Doppler/Infisical for AWS-native teams.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "parley": "./dist/cli.js" },
+  "exports": { "./config": { "types": "./dist/config.d.ts", "import": "./dist/config.js" } },
+  "files": ["dist", "templates", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "build": "tsup",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "biome check --write .",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.689.0",
+    "@aws-sdk/client-ssm": "^3.689.0",
+    "@aws-sdk/client-sts": "^3.689.0",
+    "@aws-sdk/credential-providers": "^3.689.0",
+    "@clack/prompts": "^1.2.0",
+    "commander": "^14.0.0",
+    "jiti": "^2.4.2",
+    "picocolors": "^1.1.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.14",
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0",
+    "vitest": "^2.1.0"
+  },
+  "keywords": ["aws", "ssm", "parameter-store", "kms", "secrets", "env", "dotenv", "cli", "sync", "monorepo"],
+  "publishConfig": { "access": "public" }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@parley-examples/basic",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Minimal example of using @coldsurf/parley with a single app and a development profile.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types src/index.ts",
+    "parley": "parley",
+    "parley:doctor": "parley doctor",
+    "parley:run": "parley run --app api --profile development -- node --experimental-strip-types src/index.ts",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": { "@coldsurf/parley": "^0.1.0" },
+  "devDependencies": { "@types/node": "^22.10.0", "typescript": "^5.9.0" },
+  "engines": { "node": ">=22" }
+}

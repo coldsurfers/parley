@@ -1,0 +1,19 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "templates/**", "tsup.config.ts", "tsconfig.json", "package.json"],
+      "outputs": ["dist/**"]
+    },
+    "check-types": { "dependsOn": ["^build"], "inputs": ["src/**", "tsconfig.json", "package.json"], "outputs": [] },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "vitest.config.ts", "tsconfig.json", "package.json"],
+      "outputs": []
+    },
+    "format": { "cache": false },
+    "start": { "cache": false, "persistent": true }
+  }
+}
