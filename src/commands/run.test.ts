@@ -9,10 +9,7 @@ const config: ParleyConfig = {
   region: 'ap-northeast-2',
   prefix: '/x/y',
   kmsKeyId: 'alias/test',
-  apps: {
-    api: { path: 'api', profiles: ['development', 'production'] },
-    web: { path: 'web', profiles: ['staging'] },
-  },
+  apps: { api: { path: 'api', profiles: ['development', 'production'] }, web: { path: 'web', profiles: ['staging'] } },
 };
 
 function fakeStore(byScope: Record<string, Record<string, string>>): SsmStore {
