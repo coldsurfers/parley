@@ -1,0 +1,14 @@
+src
+test
+*.test.ts
+node_modules
+coverage
+.github
+.vscode
+biome.json
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.gitignore
+.editorconfig
+*.tsbuildinfo
